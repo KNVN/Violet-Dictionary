@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonCreateWidget"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:text="TURN ON WIDGET"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/buttonCreateWidget"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="29dp"
+        android:text="Drag widget to move around, TAP to open/close searching"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+</RelativeLayout>

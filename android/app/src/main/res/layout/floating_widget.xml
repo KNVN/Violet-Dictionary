@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <FrameLayout
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#000"></FrameLayout>
+    <!--Root container-->
+    <RelativeLayout
+        android:id="@+id/root_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:id="@+id/collapse_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <!--Icon of floating widget -->
+
+            <ImageView
+                android:id="@+id/collapsed_iv"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_widget"
+                tools:ignore="ContentDescription" />
+
+            <!--Close button-->
+            <ImageView
+                android:id="@+id/close_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/ic_close"
+                tools:ignore="ContentDescription" />
+
+
+        </RelativeLayout>
+
+        <!--View while view is collapsed-->
+
+        <!--View while view is expanded-->
+        <LinearLayout
+            android:id="@+id/expanded_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone">
+
+
+            <!--Search button-->
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:ems="10"
+                android:hint="search a word..."
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:textColorHint="#E0E0E0"
+                android:textColor="#FFF"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/search_btn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ripple"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/Adapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/expanded_container"
+            android:layout_below="@+id/listview"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/border"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="11dp"
+                android:text="Word"
+                android:textColor="#9b59b6"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pronun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/word"
+                android:layout_below="@+id/word"
+                android:layout_marginTop="11dp"
+                android:text="/PronunIPA/"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/definition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/pronun"
+                android:layout_below="@+id/pronun"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="25dp"
+                android:autoSizeTextType="uniform"
+                android:text="Part Of Speech And Definition"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:maxLines = "8"
+                android:scrollbars = "vertical"/>
+
+            <TextView
+                android:id="@+id/synonym"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/pronun"
+                android:layout_marginStart="20dp"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:textStyle="bold|italic"
+                android:layout_toEndOf="@+id/pronun"
+                android:autoSizeTextType="uniform"
+                android:text="Three Synonyms "
+                android:maxLines = "2"
+                android:scrollbars = "vertical"/>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/expanded_container"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
